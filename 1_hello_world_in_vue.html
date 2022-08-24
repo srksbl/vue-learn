@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Hello World</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1 id="output">{{ message }}</h1>
+        <h2>{{ adddress }}</h2>
+        <br>
+        <button v-on:click="getFullName()">Show Name</button>
+        <h1>{{ fullName }}</h1>
+    </div>
+</body>
+</html>
+
+<script>
+    new Vue({
+            el: "#app",
+            data() {
+                return {
+                    message: "Hello World!",
+                    adddress: "Niywali",
+                    fname: "Shakeel",
+                    lname: "Ahamed",
+                    fullName: null
+                }
+            },
+            methods: {
+                getFullName() {
+                    this.fullName = `${this.fname} ${this.lname}`;
+                }
+            }
+        });
+</script>
